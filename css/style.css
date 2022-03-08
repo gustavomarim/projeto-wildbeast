@@ -16,16 +16,15 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* ========= RESET ========== */
 
 body {
     font-family: 'Vollkorn', Georgia, serif;
 }
-
-img {
-    max-width: 100px;
-}
-
 
 /* GRID GERAL */
 
@@ -38,8 +37,46 @@ img {
         "footer footer footer";
 }
 
+/* HEADER */
+
 .header {
-    grid-area: header;
+    grid-area            : header;
+    background           : linear-gradient(135deg, #8844ee, #b07dfb);
+    padding              : 30px;
+    display              : grid;
+    grid-template-columns: 1fr auto;
+    align-items          : center;
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.header nav ul {
+    display  : flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    /* influencia no tamanho do link => área de contato */
+    display      : block;
+    padding      : 10px;
+    color        : #fff;
+    font-size    : 1.125em;
+    background   : rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    /* Utilizar o transition no hover e no elemento original p/ haver transição suave */
+    transition   : 0.1s;
+}
+
+.header nav a:hover {
+    background: rgba(0, 0, 0, .5);
+    transition: 0.1s;
+}
+
+/* Add ao adjacente => resolve 0 problema do 'margin' em design responsivo */
+.header li+li {
+    margin-left: 30px;
 }
 
 .sidenav {
