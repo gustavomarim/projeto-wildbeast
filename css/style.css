@@ -17,7 +17,7 @@ a {
 }
 
 img {
-    max-width    : 100%;
+    width        : 100%;
     display      : block;
     border-radius: 5px;
 
@@ -206,6 +206,12 @@ body {
     gap                  : 30px;
 }
 
+@media (max-width:600px) {
+    .content {
+        grid-template-columns: auto;
+    }
+}
+
 .col-wide {
     grid-column: 1 / -1;
 }
@@ -333,12 +339,13 @@ diminuir o tamanho da tela */
 /* ANUNCIOS */
 
 .anuncios {
-    grid-area    : anuncios;
-    display      : grid;
-    align-content: start;
-    padding      : 30px;
-    gap          : 30px;
-    background   : #fafbfc;
+    grid-area            : anuncios;
+    display              : grid;
+    align-content        : start;
+    padding              : 30px;
+    gap                  : 30px;
+    background           : #fafbfc;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 /* FOOTER */
